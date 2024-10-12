@@ -174,6 +174,14 @@ Stopped).</comment>
 <block type="linearOpMode_opModeIsActive" id="eG.lNV0Rv1thYgojWfN5"/>
 </value>
 <statement name="DO">
+<block type="variables_set" id="mOK4YKH;aN[?SGw0kp.4">
+<field name="VAR" id="t5.-}?{lLp!zuEs%m7-%">driverSpeed</field>
+<value name="VALUE">
+<block type="math_number" id="@[`DVD,1tjJn;=xbNYB/">
+<field name="NUM">0</field>
+</block>
+</value>
+<next>
 <block type="variables_set" id="-Zx|@LZ_FInZvN9p0T]_">
 <field name="VAR" id="DV8j2P?g#Fn(+@yeF@ze">slowMaxSpeed</field>
 <value name="VALUE">
@@ -216,10 +224,20 @@ Stopped).</comment>
 <block type="controls_if" id="j;+f_f1k20LuR![BPTt)">
 <mutation else="1"/>
 <value name="IF0">
-<block type="gamepad_getProperty_Boolean" id=")w8UV5[].@Kar$;0aM|U">
+<block type="logic_compare" id="ohCYZZx+.?BEfS}+Y;10">
+<field name="OP">GT</field>
+<value name="A">
+<block type="gamepad_getProperty_Number" id="Zo|hNk@v=p;#El)$M62Z">
 <field name="IDENTIFIER">gamepad1</field>
-<field name="PROP">B</field>
+<field name="PROP">RightTrigger</field>
 <data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<block type="math_number" id="jSh6E:qUtG_7O*:M^QO0">
+<field name="NUM">0</field>
+</block>
+</value>
 </block>
 </value>
 <statement name="DO0">
@@ -279,7 +297,7 @@ Stopped).</comment>
 <field name="NUM">1</field>
 </shadow>
 <block type="variables_get" id="I4xuNxzTSgOafBSq(bp{">
-<field name="VAR" id="~^`*jvf/z)1d/6nMY)32">fastMaxSpeed</field>
+<field name="VAR" id="t5.-}?{lLp!zuEs%m7-%">driverSpeed</field>
 </block>
 </value>
 </block>
@@ -316,8 +334,8 @@ Stopped).</comment>
 <shadow type="math_number" id=")JU/?yH}F}w#;AgPWAlp">
 <field name="NUM">1</field>
 </shadow>
-<block type="variables_get" id="jzsfy=OjgpdQnE_gQ,$]">
-<field name="VAR" id="DV8j2P?g#Fn(+@yeF@ze">slowMaxSpeed</field>
+<block type="variables_get" id="t5$gQ#J75rUK|F1l-_|E">
+<field name="VAR" id="t5.-}?{lLp!zuEs%m7-%">driverSpeed</field>
 </block>
 </value>
 </block>
@@ -495,6 +513,8 @@ Stopped).</comment>
 </statement>
 <next>
 <block type="telemetry_update" id="J#1BXG78:||zGbRs[0`y"/>
+</next>
+</block>
 </next>
 </block>
 </next>
