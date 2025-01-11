@@ -1,0 +1,2006 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+<variable id="}5R#]ed}GosKcvN#h{/q">ms</variable>
+<variable id="u6^_WAFfqdRoGqZ8O-WQ">angle</variable>
+<variable id=":]g$9u2=a-U.|:Vp7Z^i">distance</variable>
+<variable id="-7RugW+C`JV6N9!U%wOP">extendViperslide</variable>
+<variable id="fLuckj{#+;4eLRu|4]Kj">imuParameters</variable>
+<variable type="AprilTagProcessor.Builder" id="NYqOu)Ei(Q{C!f;y!a^O">aprilTagProcessorBuilder</variable>
+<variable id="A@F[wk_(?$r1HR:4@}4%">inch</variable>
+<variable id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</variable>
+<variable id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</variable>
+<variable id="hpIKfLW~?f#t~MG@)F91">targetPos</variable>
+<variable id="FP*#346=#Y3??}MO58w7">speed</variable>
+<variable type="VisionPortal.Builder" id="wx@xgbnS_]b0DQL.08Qg">visionPortalBuilder</variable>
+<variable id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</variable>
+<variable id="Xk!_{IPng0#/P|7dx?3N">visionPortal</variable>
+</variables>
+<block type="procedures_defnoreturn" id="[t;vG++,3uRvSc1.frub" x="1170" y="-363">
+<mutation>
+<arg name="ms" varid="}5R#]ed}GosKcvN#h{/q"/>
+</mutation>
+<field name="NAME">goBackward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="U!ccqlkd-4;BMt2@Ew!|">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="2+CKpx7zww2h6uz[jK1T">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="QUOURByHA4J+_o,/ZvY~">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="Bg)tV6F63R05S90v53xK">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="$@Q*FlfK55M4[8hX$Eu%">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="%Fv-ZhJ?^,R.cI)_?$/7">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="TpN,c2I+4!{cdI^E#5XS">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="g.Inib~o7D{%xSFGz}$!">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id=":%p26CfUOTTh6?^lf2U!">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="J#*r=.sgW[bHyIeS||T$">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="5*)9o)`gPx{*u{^m3QZx">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="lrPLS/p9(v-@zJk9oui4">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="lRSt[0|MGi.Nnh#MH?fB">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="h9Xy6BF2;o@X8+}{Px51">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="=DuVb6xg~;_`Ngk2I)XZ">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="b#:FD}#7QKHjSj2BSksW">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="|]G9~-240JiJZ?57f$.k">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="t)ht^ozZQ@s@bjb^23Re">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="BV21q`#V~h^rHU5xPnT_">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="2eMh*k!%gWD5,K^6vcA#">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="!tTkwHvzC:@U^smWuu2R">
+<field name="NUM">1000</field>
+</shadow>
+<block type="variables_get" id="f=23s@acJ:e$b3$ke!={">
+<field name="VAR" id="}5R#]ed}GosKcvN#h{/q">ms</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id=".:v(%]cWLQqyJZ_!yThX">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="?{V_+tCwY7{~N_rER11.">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id=")kR_)/xZjKW7T0E2?h$#">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="0Gp=KS-R?yGB(*o?,rFy">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="o~dyJQ$bGpmKVqbOyiPh">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="0ew(Lvz-R1cvidR][py0">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="0L;M|i0XP%LX*E:v_TAZ">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="gq)1Ff|}k)4b;CMvKmTV">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="(e=/]]iSuJX9=rTStpr4" x="1866" y="-391">
+<mutation>
+<arg name="ms" varid="}5R#]ed}GosKcvN#h{/q"/>
+</mutation>
+<field name="NAME">strafeLeft</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id="rfgv%gH=e%kE`z;#.)Ab">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id=":m,Xd-Tf..C7Md_@2jD~">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="s3y-E?jgL#t.AAnPrxA9">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="u+$xuCVdkBG[%b]f05P[">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="MlHFbdq`0F`vv~0C2%6_">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="#pBxB8Hbl8UxXl+Q|u%d">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="K^VKf4n?-e}-``*d,JK,">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="C):V6O{Bk|W{u6(?/]_.">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="5f5gmamAkq4?KrZ0a!W~">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="7w^}z?HXo[F:?g~+,tYm">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="~t_g]hw[}vkxf(,#Q$+|">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="0.qN1%Unc[1qKTO6AbO)">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="b8$0.^%-q}1}_-$wS/(7">
+<value name="MILLISECONDS">
+<shadow type="math_number">
+<field name="NUM">1000</field>
+</shadow>
+<block type="variables_get" id="6xINr7s/KCTNDM$rl%yy">
+<field name="VAR" id="}5R#]ed}GosKcvN#h{/q">ms</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="=klz91PCOa^2^}v1fB,3">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="VG_.roH];NMB[HX7+:~R">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="4??fv[17i:A}sv=io9FY">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id=":V@M/R~a@;#Y{;X-XF*h">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="47fQT1L.Lqsp@NW6/-6C">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="5QA}*ApMK%hb4a-fxwIl">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="mEOJkd(~}Q[1@-ko6W{f">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="fV^*}opFzH6O)*|96v4x">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="thvoR$e+A5LyKXahMJ!V" x="-22" y="-273">
+<field name="NAME">init</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="HEL~LWiZ@PYe(!XNjbD[">
+<field name="VAR" id="fLuckj{#+;4eLRu|4]Kj">imuParameters</field>
+<value name="VALUE">
+<block type="imuParameters_create" id="0Q:oQa`CbB:;rs#@b2A0">
+<value name="IMU_ORIENTATION_ON_ROBOT">
+<block type="revHubOrientationOnRobot_create1" id=",7iV^th~qbAeA1h#!R;,">
+<comment pinned="false" h="150" w="325">Create a RevHubOrientationOnRobot object for use with an IMU in a REV Robotics Control Hub or Expansion Hub, specifying the hub's orientation on the robot via the direction that the REV Robotics logo is facing and the direction that the USB ports are facing.</comment>
+<value name="LOGO_FACING_DIRECTION">
+<shadow type="revHubOrientationOnRobot_typedEnum_logoFacingDirection" id="4J)kZM(Zof=e7V7%]Cgg">
+<field name="LOGO_FACING_DIRECTION">UP</field>
+</shadow>
+</value>
+<value name="USB_FACING_DIRECTION">
+<shadow type="revHubOrientationOnRobot_typedEnum_usbFacingDirection" id="HfyXmObzz).?3{Zr,jla">
+<field name="USB_FACING_DIRECTION">BACKWARD</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="imu_initialize" id="hhY@Z~sn~)6j8Pqj-cya">
+<field name="IDENTIFIER">IMUAsIMU</field>
+<data>{"IDENTIFIER":"IMU"}</data>
+<value name="PARAMETERS">
+<block type="variables_get" id="{k#RQ1XW5m5$eLtrP2E^">
+<field name="VAR" id="fLuckj{#+;4eLRu|4]Kj">imuParameters</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="Z[$G](A2+e_(Mg94wJ(!">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+<value name="VALUE">
+<block type="math_number" id="_iIWdrgE[;O-x{;`arKW">
+<field name="NUM">0.4</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="oU?$|@AmH!b`mN)_KpF9">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="3[HyjFwx]B5zqS%UmRiB">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="[rD5.CT9^Uw}MzjjNr)[">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="!%}NcR8x{xh9|K`Ooj*x">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Direction" id="U%kcJaeXm/%Re:ssA9vr">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="zPhaQ1U^3f*SFGBZ=qM}">
+<field name="DIRECTION">REVERSE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="FQbC[NX)dS^35YaZQqi}">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id=".L,FRFoOZ7Ch{*8_ni!J">
+<field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="rr1=@Sv^[Yl*e2)$LKtc">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="S()=J2|PI)HDst,eNh(5">
+<field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id="~7cN!XYI^uII10?GBMiJ">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="|!ZU^Voz/}`]wajdAdX,">
+<field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_ZeroPowerBehavior" id=".s0Dn]jz|Tx*5rDuL7gD">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">ZeroPowerBehavior</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_zeroPowerBehavior" id="@)0aN+{-lkl%9#%8Y*2]">
+<field name="ZERO_POWER_BEHAVIOR">BRAKE</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="t`^b78x-?_*{dgSF*$C4">
+<field name="IDENTIFIER">IntakeArmAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"IntakeArm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="mWb9(+8vKXm4}]0Jv/7W">
+<field name="NUM">0.35</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="3jL#DzN2M8h^P1=ldEj2" x="-739" y="-20">
+<field name="NAME">initAprilTag</field>
+<comment pinned="false" h="40" w="277">Initialize AprilTag Detection.</comment>
+<data>{"commentPositionLeft":-48,"commentPositionTop":-62}</data>
+<statement name="STACK">
+<block type="aprilTagProcessorBuilder_create_assign" id="vgy,$OU]X^(:YbF2Vua7">
+<field name="APRIL_TAG_PROCESSOR_BUILDER" id="NYqOu)Ei(Q{C!f;y!a^O" variabletype="AprilTagProcessor.Builder">aprilTagProcessorBuilder</field>
+<next>
+<block type="variables_set" id="9ETs9:`UiE7}2/.0`a~r">
+<field name="VAR" id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</field>
+<value name="VALUE">
+<block type="aprilTagProcessorBuilder_build" id="ZC-;|*U@l{=%HiUNmJrU">
+<field name="APRIL_TAG_PROCESSOR_BUILDER" id="NYqOu)Ei(Q{C!f;y!a^O" variabletype="AprilTagProcessor.Builder">aprilTagProcessorBuilder</field>
+</block>
+</value>
+<next>
+<block type="visionPortalBuilder_create_assign" id="2wFk+W2aW+Mz^+p_v*f|">
+<field name="VISION_PORTAL_BUILDER" id="wx@xgbnS_]b0DQL.08Qg" variabletype="VisionPortal.Builder">visionPortalBuilder</field>
+<next>
+<block type="visionPortalBuilder_setCamera" id="H=lYdc84X;x77/#CMuTX">
+<field name="VISION_PORTAL_BUILDER" id="wx@xgbnS_]b0DQL.08Qg" variabletype="VisionPortal.Builder">visionPortalBuilder</field>
+<comment pinned="false" h="68" w="247">Use a webcam.</comment>
+<value name="CAMERA">
+<shadow type="navigation_webcamName" id="z,AOx#9^z6q/iJ*3@dCH">
+<field name="WEBCAM_NAME">Webcam 1</field>
+</shadow>
+</value>
+<next>
+<block type="visionPortalBuilder_addProcessor" id="f7=?kHS5WB*^!Xm*[AK-">
+<field name="VISION_PORTAL_BUILDER" id="wx@xgbnS_]b0DQL.08Qg" variabletype="VisionPortal.Builder">visionPortalBuilder</field>
+<value name="VISION_PROCESSOR">
+<block type="variables_get" id="4-koY-R_w9}{-=nB`0%J">
+<field name="VAR" id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="=Lmr~fz^*eJ8GYaHlr`{">
+<field name="VAR" id="Xk!_{IPng0#/P|7dx?3N">visionPortal</field>
+<value name="VALUE">
+<block type="visionPortalBuilder_build" id="j3MQi-4.1,WNH[j+s_.p">
+<field name="VISION_PORTAL_BUILDER" id="wx@xgbnS_]b0DQL.08Qg" variabletype="VisionPortal.Builder">visionPortalBuilder</field>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="686" y="-33">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="141" w="577">This sample contains the bare minimum Blocks for any regular OpMode. The 3 blue
+Comment Blocks show where to place Initialization code (runs once, after touching the
+DS INIT button, and before touching the DS Start arrow), Run code (runs once, after
+touching Start), and Loop code (runs repeatedly while the OpMode is active, namely not
+Stopped).</comment>
+<data>{"commentPositionLeft":-20,"commentPositionTop":-169}</data>
+<statement name="STACK">
+<block type="procedures_callnoreturn" id="|gI:6!+%e~v;X~1q7?fs">
+<mutation name="init"/>
+<next>
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="procedures_callnoreturn" id=".xzATT(4[5!1id2k,88!">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="r$7lC,V}Sc2xNHjyFvTd">
+<field name="NUM">4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="!K{5C?gs`_I$ZJHp{H$s">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="!gNf`Te$wOVNwT=`%+?d">
+<mutation name="turnCCW">
+<arg name="angle"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="-9FnLZAbhspV0=x*u5h)">
+<field name="NUM">80</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="]{bN[EVlkEr9:cyz5?,N">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="~1KTOMz6TyJnsi2~)aUf">
+<field name="NUM">24</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="5pp;Xf.7kb.*^0bN(IHS">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="$DHO}{s+!U~Ho3)Iaejd">
+<mutation name="turnCCW">
+<arg name="angle"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="6OS;=Q4SjjQ=~AuAQ7xS">
+<field name="NUM">25</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="OfiL4Jnf{)d7-hLjbANX">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+<value name="VALUE">
+<block type="math_number" id="Y48e9WHSVUK1Dk36w*rN">
+<field name="NUM">0.12</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="PomiH9u({NPu+m(!rffS">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="42R0Iuy6/;pR0~ltJov6">
+<field name="NUM">4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="erBUtHYCy_x1+tY9U,X1">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id=")v|`hezNqLz]p,!}n(O+">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="kKv@%39oy3x@bmEENnN:">
+<field name="NUM">2</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="si`aahHC|(lHXwipa2m(">
+<field name="BOOL">FALSE</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="GdG|t)yhwWaP8K3MXH8R">
+<mutation name="outtake"/>
+<next>
+<block type="procedures_callnoreturn" id="n:[S-|`(JiTw5D338Q[?">
+<mutation name="goBackward">
+<arg name="ms"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="cso;%2BOf}~5$!N14pS}">
+<field name="NUM">800</field>
+</block>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="r@:k{RHso+?rL,_4G@P}">
+<field name="IDENTIFIER">IntakeArmAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"IntakeArm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="i0ug?2!a3;U[e8rm%VJ8">
+<field name="NUM">0.35</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="A3BCuzV)3`KG1k[EpHmW">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="y5Y$jkc]Sz(}EpQ),b@(">
+<field name="NUM">-0.8</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="~!BY%Ty#C$`d_esf3({o">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="V=Bp8;*}5}KK$1FTJ$mq">
+<field name="NUM">2300</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="h|NB82X|-XIvx}TLF]-_">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="zz}%bUxh!8m8Y%}q(TyI">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="variables_set" id="qK_Us1]df*u?7]_=%zav">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+<value name="VALUE">
+<block type="math_number" id=":1()l*ub%Q*)O.?]2Lcv">
+<field name="NUM">0.7</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="/?iN55PR?leVc!w.V4^M">
+<mutation name="turnCCW">
+<arg name="angle"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="jS+,4$@a__ayZwaGa$E(">
+<field name="NUM">130</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="^9w#KM=Jq46dM#.%iQMh">
+<mutation name="strafeLeft">
+<arg name="ms"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="^8W*dkm9ZV6THV7N.=Pv">
+<field name="NUM">1450</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="C[i~0ZU`4DSU1(F4]x%u">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+<value name="VALUE">
+<block type="math_number" id="^8ZeZLISNEh0+F_u`o:-">
+<field name="NUM">0.43</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="3.-n_,A/^H+p%rW)9epa">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="Bw_f9|Zq#E[{!FA[7KIM">
+<field name="NUM">17</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="*HOufvwxbzD/xmm0h=8K">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="*wcjqy/0q^Td3|I)$Bk#">
+<field name="IDENTIFIER">IntakeArmAsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"IntakeArm"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="AmPaZ?}B8%+,yM#gA,+|">
+<field name="NUM">0.095</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="XVM})si7_?wTIq7nHv83" x="1066" y="102">
+<mutation>
+<arg name="distance" varid=":]g$9u2=a-U.|:Vp7Z^i"/>
+<arg name="extendViperslide" varid="-7RugW+C`JV6N9!U%wOP"/>
+</mutation>
+<field name="NAME">goForward</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="dU6ZjP#=NCAie@?pZ}Ha">
+<field name="VAR" id="A@F[wk_(?$r1HR:4@}4%">inch</field>
+<value name="VALUE">
+<block type="math_number" id="Ko}NltT0qtuB%Zu18nR1">
+<field name="NUM">50</field>
+</block>
+</value>
+<next>
+<block type="variables_set" id="xxdP5:/UE}@JK81i=GWW">
+<field name="VAR" id="hpIKfLW~?f#t~MG@)F91">targetPos</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="U`Kb;p;FP??F,)~QV{Ye">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id=",NNGXid0_aJ@8|^2Nx+^">
+<field name="NUM">1</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="HG*qNL(eOq`n)Ne*`~=q">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="]:yMjdrlGem4[dS`B-Vx">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="oZUmB9+I,c9|G(t;b:eZ">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="Ta^.~+lm`Svq),,H:CAe">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="a-.ODv{Fy![8[}tb=dHX">
+<field name="VAR" id="A@F[wk_(?$r1HR:4@}4%">inch</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="]DKFYS;R6)voF#_!cG9M">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="$LjA$1ROZx%hQT5Sv,]A">
+<field name="VAR" id=":]g$9u2=a-U.|:Vp7Z^i">distance</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="s7H.Ln8szo_hNBB?/*V5">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="CsROiJ)}|7!~fT1|sEnr">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="|B^BYC?+|~nkc{TWd!zp">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="980aHGdYT=J*I-Ga7wpe">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Wt.rv6X%R$6Y`MitV6Xd">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="CaB[j,fYi!d1l?_PS4Kg">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="gc?[?|-t]sJ@/6]`H7zS">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="r?p7yap:R+|IuI5w!}Rq">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="9#8IG4}/1d=D:KEym+:o">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="rOPe;7Aw;ohvaI97h+%[">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="$-z{BWhRe`;Yb0@4oTC)">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="n{V0NZ|h|C@^hc]GS)|2">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id="r/]1co4XGV7]yph7|YR~">
+<field name="MODE">UNTIL</field>
+<value name="BOOL">
+<block type="logic_compare" id="?Gn~CJ%Sc*F.BdJF.[tO">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="dcMotor_getProperty_Number" id="B*c@rOU0YnSLMA%yi3{*">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+</block>
+</value>
+<value name="B">
+<block type="variables_get" id="jjJn!/Jb^})It}A5+U2-">
+<field name="VAR" id="hpIKfLW~?f#t~MG@)F91">targetPos</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="controls_if" id="*yKv.TsjYRdE*H89Ely*">
+<value name="IF0">
+<block type="variables_get" id="/f!@nbiBA|6Zv+sb6^4V">
+<field name="VAR" id="-7RugW+C`JV6N9!U%wOP">extendViperslide</field>
+</block>
+</value>
+<statement name="DO0">
+<block type="dcMotor_setProperty_Number" id="Oi4VT42/wcqheUu~EVmm">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="_Z/Kt]o?+6EfQErTUeL6">
+<field name="NUM">0.97</field>
+</shadow>
+</value>
+</block>
+</statement>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_Number" id="A+2~lFt]Ru,;3.p[50ab">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="~T3^BRWCwPfZlJ5,TUl)">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="Uz$,z5HRk%dKruCWLz:{">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="%yd[$;@)ry|^1PXQPWA?">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="5brUM-ZYdg3CM10c/Ha)">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="kjC:7?PX5B/aDcqVGMRq">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="(@YU}`urC^Y-KDOBEIi8">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="/O7)c++KA0:2I$!wX^Tz">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="ZH?s=[P~94zyHtW^;}J3">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="L6AUx4s4m)==8bUrLlQg">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="r)MW|F8:,MBSuH=AJzR." x="-547" y="213">
+<field name="NAME">outtake</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="crServo_setProperty_Number" id="|tbU-:%#Q8MW!07R+Vf|">
+<field name="IDENTIFIER">IntakeAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Intake"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="-Lu+Q$s,~,=DbgLf2W5!">
+<field name="NUM">-0.5</field>
+</shadow>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="R7#`r_wng_0M%|de1q+s">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="T289lwg;D)1bjwJATtow">
+<field name="NUM">100</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="YKVBhB+{vj,p(ty0A-`~">
+<field name="IDENTIFIER">IntakeAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"Intake"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="pxN5-/+o/8Owfl{CXh))">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="xYD@T?$]Ztm@_oE*M+zM" x="2050" y="179">
+<field name="NAME">telemetry</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="telemetry_addNumericData_Number" id="1.6w:Mzt;!X`R|5(YC3-">
+<value name="KEY">
+<shadow type="text" id="63Aolf$MOM1CVA+)K!)r">
+<field name="TEXT">angle</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="procedures_callreturn" id="yGQ[+*6H[o|;xW22tlg4">
+<mutation name="getZAxisAngle"/>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="$+v/0xCsF{tyhP.b,BaO">
+<value name="KEY">
+<shadow type="text" id="0}{gBiTqz@1AP^LWU)r5">
+<field name="TEXT">internalAngle</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number" id="Zir^3/HE{4;`dNND=wtP">
+<field name="NUM">123</field>
+</shadow>
+<block type="procedures_callreturn" id="gm10@LpB4rXV%X!lq%9.">
+<mutation name="getInternalZAxisAngle"/>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="),=J*Dm$TY7Sq}tFaD-c">
+<value name="KEY">
+<shadow type="text" id="maZ_7]rAlzA#+*)6oJ=L">
+<field name="TEXT">currentPosition</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="/x.1LSS~M`oJ9KT1xmPI">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_addNumericData_Number" id="i/peebNH##c[]V.GFdy(">
+<value name="KEY">
+<shadow type="text" id="H0R!x6f538g{B,UTp$9H">
+<field name="TEXT">viperslide</field>
+</shadow>
+</value>
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">123</field>
+</shadow>
+<block type="dcMotor_getProperty_Number" id="k4tzjLfUzuGezp@KQ:LT">
+<field name="IDENTIFIER">ViperslideAsDcMotor</field>
+<field name="PROP">CurrentPosition</field>
+<data>{"IDENTIFIER":"Viperslide"}</data>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="`?]D~sZ{/%`T*puH%[]:"/>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defreturn" id="FV~sQ7[ml?Ni~=qJEn]#" x="2667" y="187">
+<field name="NAME">getY</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_repeat_ext" id=":sXXEedY3=rFr)cKw$P|">
+<value name="TIMES">
+<shadow type="math_number" id="fZGwb6E${{xhtr`h6ft1">
+<field name="NUM">20</field>
+</shadow>
+</value>
+<statement name="DO">
+<block type="variables_set" id="jNF`V0)P``:S1Ch1],ef">
+<field name="VAR" id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</field>
+<comment pinned="false" h="80" w="160">Get a list of AprilTag detections.</comment>
+<value name="VALUE">
+<block type="aprilTagProcessor_getDetections" id="PX.L^a]84Qq5{_`kShnB">
+<value name="APRIL_TAG_PROCESSOR">
+<block type="variables_get" id="Xr:IF:j*h](Tg*CcxP[j">
+<field name="VAR" id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="controls_forEach" id="Iehj]:0|tl~{_](JF(HE">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+<comment pinned="false" h="81" w="199">Iterate through list and call a function to display info for each recognized AprilTag.</comment>
+<data>{"commentPositionLeft":-50,"commentPositionTop":-106}</data>
+<value name="LIST">
+<block type="variables_get" id="x%^XkSwX-UBTBzdy%+L3">
+<field name="VAR" id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</field>
+</block>
+</value>
+<statement name="DO">
+<block type="telemetry_addLine" id="jCS.*]{?zzFyoGiklT#O">
+<value name="TEXT">
+<shadow type="text" id="eW$%B]KcUvcf1u)Vx(Q}">
+<field name="TEXT"/>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addLine" id="U:[Y:7=Jx?E#lYNX0H#n">
+<value name="TEXT">
+<shadow type="text" id="mo9/IaIkl~`xhE:KMv+8">
+<field name="TEXT">XYZ = X, Y, Z (Up/Down)</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_update" id="Kg*tdt}yzps0creguN1C">
+<next>
+<block type="controls_if" id=",ny={71=bgqn=4W!Ea_@">
+<value name="IF0">
+<block type="aprilTagDetection_getProperty_IsNotNull" id=";lYRhJ%*!#*gatl!AQOX">
+<field name="PROP">metadata</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="FGrVp+/2#hF.1{ITz-gm">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="telemetry_addLine" id="A^B@2gR@vH[z$6(NQp?A">
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT"/>
+</shadow>
+<block type="text_join" id="Lx?jh2UF^jD9Z,Y-`o*h">
+<mutation items="2"/>
+<value name="ADD0">
+<block type="text" id="`g;V)2E^M(K#3NZMl**X">
+<field name="TEXT">ID </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="aprilTagDetection_getProperty_Number" id="ndQ_$GP|hvx=Dc(y2-M:">
+<field name="PROP">id</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="mJU%s5Ne@-f=FwH{8_8?">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addLine" id="SvWz}l^X-f`0I~X8/ZvQ">
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT"/>
+</shadow>
+<block type="text_join" id="5{AAM?Zw+ow65FOZOuKF">
+<mutation items="7"/>
+<value name="ADD0">
+<block type="text" id="NUCrZ9_1,p6ez8DX/8XB">
+<field name="TEXT">XYZ</field>
+</block>
+</value>
+<value name="ADD1">
+<block type="misc_formatNumber_withWidth" id="/p[y7670RHuYsc0fKgx3">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id="`rnX]Xkuocx4!#R`*^)U">
+<field name="PROP">ftcPose.x</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="!x^:kh.xq;L,U16Y{Yu_">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="NQZX7h|/6;TyCOlS-Qhc">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="b#c.Kb/0W0SP/Gk@*-)[">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="text" id="5irls7nshmODXNb:O=zn">
+<field name="TEXT"> </field>
+</block>
+</value>
+<value name="ADD3">
+<block type="misc_formatNumber_withWidth" id="a#(X0O%(^EZb=BdG@JXP">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id="@/L`ny,NuV=FPJq=p4EU">
+<field name="PROP">ftcPose.y</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="6@my[Uq67A]7NJ3mJ*}=">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id=";V9FWADQf2;:}XX(XyH^">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="-SHTr*{cpOrw!@d%f2`{">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD4">
+<block type="text" id="Z9bjjh2#CDp`}R8c2~Fv">
+<field name="TEXT"> </field>
+</block>
+</value>
+<value name="ADD5">
+<block type="misc_formatNumber_withWidth" id="p;g.12YVTOoICn@4Zfm!">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id="?vAy4ziNd`iz-B4H6Ki#">
+<field name="PROP">ftcPose.z</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="=c$e,J/|CP7nCncJ41(P">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="cCYi5a`iU{t:xrmrX1r^">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="I=/LbF}Zq6YJw![.`NGf">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD6">
+<block type="text" id="`WWqGs*E:I(H5_J}Hp1c">
+<field name="TEXT">  (inches)</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="Y4-I1Gav5o@Bpy7+w@z8">
+<next>
+<block type="procedures_ifreturn" id="PRG`.`G1@Pe_=%C+DD!+">
+<mutation value="1"/>
+<value name="CONDITION">
+<block type="aprilTagDetection_getProperty_IsNotNull" id="IDzD5boc02bF8biv[Brm">
+<field name="PROP">metadata</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="(]%E-YDpo3o_V#WBQ{aB">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="VALUE">
+<block type="aprilTagDetection_getProperty_Number" id="P8rPdJ,i}cA]B7fZ4%j/">
+<field name="PROP">ftcPose.y</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="wzQV[ot/hb!_WJ-65x_I">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+<value name="RETURN">
+<block type="math_number" id="rY*6(qfh{-6Z$(4QS33k">
+<field name="NUM">0</field>
+</block>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="BS(SyW_b**{0C/l-kISl" x="1439" y="714">
+<mutation>
+<arg name="angle" varid="u6^_WAFfqdRoGqZ8O-WQ"/>
+</mutation>
+<field name="NAME">turnCW</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="imu_resetYaw" id="vQ^biDP0|r/5/;plKyEK">
+<field name="IDENTIFIER">IMUAsIMU</field>
+<data>{"IDENTIFIER":"IMU"}</data>
+<next>
+<block type="crServo_setProperty_Number" id="9J(.`Rcd,z(n?DrW|!@6">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="WU^E*yW8If#WdhUn8}ob">
+<field name="NUM">-0.5</field>
+</shadow>
+<block type="math_single" id="=g-r.gHb+6,/LI:#=ALL">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="s-5tXki84[W60M=WJRt3">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="cKO8*(s1Nu6+ibgYa|$3">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="m`Kk+BNbR)Rnh|[)3bg9">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="eR?7aK@+uo1f!%((]2x;">
+<field name="NUM">0.5</field>
+</shadow>
+<block type="variables_get" id="e/1u]~;tT%Z}/qoWSd1[">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="n3Go-zI()?*.rLu^B;[1">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="?Ga+ZFLhSA,b$#ZCYB$)">
+<field name="NUM">0.5</field>
+</shadow>
+<block type="variables_get" id="FGWZB%8x/+{?EcZQ9S]d">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="r7tq7*$_Pq!]@?[[OEel">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="h@-{3XH}6zCf@i6]f8{C">
+<field name="NUM">-0.5</field>
+</shadow>
+<block type="math_single" id="uxY`,A}wQv!fT,FQ;v!~">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="xoZ=.qreUMs^=ydUtQ*g">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id="_gatpyc%-din9?_%5L!0">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_compare" id="NRP)nh=:2gTccGPiORzo">
+<field name="OP">LTE</field>
+<value name="A">
+<block type="math_single" id="nkKg$RL6iTkc=kqv:=G/">
+<field name="OP">ABS</field>
+<value name="NUM">
+<shadow type="math_number" id="#c(}Fi0C~#exlw=G;oda">
+<field name="NUM">9</field>
+</shadow>
+<block type="procedures_callreturn" id="*wp$j8OY~tB:5!J8JSVi">
+<mutation name="getInternalZAxisAngle"/>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<block type="variables_get" id="{9zbH6[D?;^d=[a5x?{U">
+<field name="VAR" id="u6^_WAFfqdRoGqZ8O-WQ">angle</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="k2Dr`:sAY3uI=KG;MiF9">
+<mutation name="telemetry"/>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_Number" id="}9EJ97/tkBn3MKVe`gdS">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="t{1z`YVZI(2ED/fx^5.U">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="lbpU2g?XopY?ElH/4)*t">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="j+nZyTBA%r9/8A$^L^cV">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="{b0nrjLU+zA2_O]egMV]">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="COTE=~-eU(u#-=B:*;r-">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="^aO|{A@VsMRiEo5YAP~o">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="xev}K,0+T@U8!!WXBUp6">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defreturn" id="kT5YKYk0n#+TZ5-t,nR?" x="-222" y="1441">
+<mutation statements="false"/>
+<field name="NAME">getZAxisAngle</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<value name="RETURN">
+<block type="math_arithmetic" id="A?kIT0fC%nc,eTpYJY(;">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="~dmP0$7LiM?C*-odsH.?">
+<field name="NUM">180</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="yawPitchRollAngles_getPropertyWithAngleUnit_Number" id="kCt;{~hAYau;d}?p(0:0">
+<field name="PROP">Yaw</field>
+<value name="YAW_PITCH_ROLL_ANGLES">
+<block type="imu_getProperty_YawPitchRollAngles" id="_?VA0X]#KAA)e0]6~*/-">
+<field name="IDENTIFIER">IMUAsIMU</field>
+<field name="PROP">RobotYawPitchRollAngles</field>
+<data>{"IDENTIFIER":"IMU"}</data>
+</block>
+</value>
+<value name="ANGLE_UNIT">
+<shadow type="navigation_typedEnum_angleUnit" id="$i@R[mrg1aTUZ;~p57ru">
+<field name="ANGLE_UNIT">DEGREES</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+<block type="procedures_defnoreturn" id="HdD._ijv.!XN^/BeBmmB" x="1243" y="1625">
+<mutation>
+<arg name="angle" varid="u6^_WAFfqdRoGqZ8O-WQ"/>
+</mutation>
+<field name="NAME">turnCCW</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="imu_resetYaw" id="$c+Ybs)7^h[;^y-a|[Qo">
+<field name="IDENTIFIER">IMUAsIMU</field>
+<data>{"IDENTIFIER":"IMU"}</data>
+<next>
+<block type="crServo_setProperty_Number" id=")I,:y6~?U;]YcV]F$qH2">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Gga``}CZ6a#JM:*luF,!">
+<field name="NUM">0.5</field>
+</shadow>
+<block type="variables_get" id="1TUo^f-F?:,uOt|~STSA">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="NN3Kc08+DYTP%)oPyzn-">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="8d){)H(W$xy$E(Bf)TA5">
+<field name="NUM">-0.5</field>
+</shadow>
+<block type="math_single" id=");uz:z5z};r?KIs6kHt7">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="FST|9d!(uM/!LxSHzPfM">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="wuSfylSP)S2-uXx[2?c[">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="}_jqRm8%-rRI7m}f_/p(">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="@2E(TADQ.YKQ*EyF-Z56">
+<field name="NUM">-0.5</field>
+</shadow>
+<block type="math_single" id=")xr0XZR`]x8;ge?fDLVi">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number">
+<field name="NUM">9</field>
+</shadow>
+<block type="variables_get" id="XLRiNs}EN)(Jmp{[fRA{">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="H2,NXGng?*KGLmI=D*Cz">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="a.f@C_cJ9yhAwL4!A3_^">
+<field name="NUM">0.5</field>
+</shadow>
+<block type="variables_get" id="psMyK70W+{Z$i(ytga/f">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="controls_whileUntil" id="z*NN#]lCwcFmLduKnU0I">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_compare" id="N/{1xERB)@XWHh%;,m/v">
+<field name="OP">GTE</field>
+<value name="A">
+<block type="procedures_callreturn" id="i@EI5tq.8,+5BRV%IUTP">
+<mutation name="getZAxisAngle"/>
+</block>
+</value>
+<value name="B">
+<block type="math_arithmetic" id="4d]gW95D4%}A7AuTQFU#">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="4^UE*wp,q3Po_2f(js$M">
+<field name="NUM">180</field>
+</shadow>
+</value>
+<value name="B">
+<shadow type="math_number" id="L_tB78]V.:G]xpv{,ROa">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="OyFWQ`vx}[)1.%TRK3Ud">
+<field name="VAR" id="u6^_WAFfqdRoGqZ8O-WQ">angle</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO">
+<block type="procedures_callnoreturn" id="HY{Z7zI_(Xg1$H_6.mvs">
+<mutation name="telemetry"/>
+</block>
+</statement>
+<next>
+<block type="dcMotor_setProperty_Number" id="suI-W@e1Ct_(*%Q?:w;i">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="ZS`ufY/ca5JP|ZvEvyT1">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="!~QRg|m~DgC7mMdjLiaN">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="2t:]=B!8az@j|k-t=I3*">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Wj7wvLi|E7bv^%nx#4-?">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="P2V8sdKD?3t!GL(EZzMJ">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="!3`-QPQpH,uvGq}.Q3$%">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="pjisQzGm^0TmQ_z!#j9K">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="VM=h5VJ_b(nAdGi^t_%S" x="532" y="1756">
+<field name="NAME">telemetryAprilTag</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="controls_repeat_ext" id="-QFvVxy1Ek++3fm.$@R0">
+<value name="TIMES">
+<shadow type="math_number" id="x,uV3~OA1*,]aFh~Yt5u">
+<field name="NUM">20</field>
+</shadow>
+</value>
+<statement name="DO">
+<block type="variables_set" id="k7wSbwxn?ZsVi/M_oGj,">
+<field name="VAR" id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</field>
+<comment pinned="false" h="80" w="160">Get a list of AprilTag detections.</comment>
+<value name="VALUE">
+<block type="aprilTagProcessor_getDetections" id="`8-y}mXC_mxcpHI1%2!K">
+<value name="APRIL_TAG_PROCESSOR">
+<block type="variables_get" id="`E$u8KJJ`d3l8]0r6BGa">
+<field name="VAR" id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="controls_forEach" id="6g`D_ziV.w(#tFfxf[?z">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+<comment pinned="false" h="81" w="199">Iterate through list and call a function to display info for each recognized AprilTag.</comment>
+<data>{"commentPositionLeft":-50,"commentPositionTop":-106}</data>
+<value name="LIST">
+<block type="variables_get" id="(qE~AFShMOXa,|dyP-?|">
+<field name="VAR" id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</field>
+</block>
+</value>
+<statement name="DO">
+<block type="telemetry_addLine" id="V=zb*Tc-Phd$_SLZ/v^$">
+<value name="TEXT">
+<shadow type="text" id="^ZK%|=K{EC~7NIsH.XSp">
+<field name="TEXT"/>
+</shadow>
+</value>
+<next>
+<block type="telemetry_addLine" id="~[zp~dd.^ca-%,^vSaeh">
+<value name="TEXT">
+<shadow type="text" id="7vZTE$^mScG`Zfd`C[o5">
+<field name="TEXT">XYZ = X, Y, Z (Up/Down)</field>
+</shadow>
+</value>
+<next>
+<block type="telemetry_update" id="8SVCgYch#yN-16cw+2h{">
+<next>
+<block type="controls_if" id="grfyI;bn_BTh-E1fLZxr">
+<value name="IF0">
+<block type="aprilTagDetection_getProperty_IsNotNull" id="^@/s*nd-.UkW|at33VAq">
+<field name="PROP">metadata</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="8#|)G1v_(`D5b;qJ`;1e">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<statement name="DO0">
+<block type="telemetry_addLine" id="lP_sy+1Cj-JX!p9PB~yv">
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT"/>
+</shadow>
+<block type="text_join" id="K6^g(:(]hV5jTTF7m1w.">
+<mutation items="2"/>
+<value name="ADD0">
+<block type="text" id="j^.GB5TcocwlLF=}3J!W">
+<field name="TEXT">ID </field>
+</block>
+</value>
+<value name="ADD1">
+<block type="aprilTagDetection_getProperty_Number" id="{O}#*nZC]e9d}x)BrI1|">
+<field name="PROP">id</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="$sJ1a/V5px?^f|tN+I3{">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_addLine" id="p1vt=,!R2)m;C5%Ehy_x">
+<value name="TEXT">
+<shadow type="text">
+<field name="TEXT"/>
+</shadow>
+<block type="text_join" id="|d?wlj=4Z;yrZ.LyZ.IQ">
+<mutation items="7"/>
+<value name="ADD0">
+<block type="text" id="FRT*NNW[`U6N3VSu~vf_">
+<field name="TEXT">XYZ</field>
+</block>
+</value>
+<value name="ADD1">
+<block type="misc_formatNumber_withWidth" id="zfz*?Nj!|?(d1/p:jIt$">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id=".bBj9RUwy#09Ml;XZBy*">
+<field name="PROP">ftcPose.x</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="+]}Z6iqG~^nl,IvjKM(?">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="FmmLLg]YKmA$=}Z4MzW/">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="bW?*{I=)c-bX~]#.%n2b">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD2">
+<block type="text" id="XjzOKp/2FK,_ngX^U-o1">
+<field name="TEXT"> </field>
+</block>
+</value>
+<value name="ADD3">
+<block type="misc_formatNumber_withWidth" id="Q@9Xm=^Hkv02#rdCbt^[">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id="1Q3u/`*T0H:(oEPvY!4d">
+<field name="PROP">ftcPose.y</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="g]/j^/}lAI{hl`i)!sW2">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="WSW%MeIn$QYqO,x!SYDn">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="D[mCv]hf}WXPoAjw^wSU">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD4">
+<block type="text" id="Jl%9#J|W![?=AGky6WzQ">
+<field name="TEXT"> </field>
+</block>
+</value>
+<value name="ADD5">
+<block type="misc_formatNumber_withWidth" id="@;-RA7#V_C)=?.Hs9/=?">
+<value name="NUMBER">
+<shadow type="math_number">
+<field name="NUM">3.14159265</field>
+</shadow>
+<block type="aprilTagDetection_getProperty_Number" id="q?4^7G[dj*-AGMd2^LEs">
+<field name="PROP">ftcPose.z</field>
+<value name="APRIL_TAG_DETECTION">
+<block type="variables_get" id="neC`Nq_fi[P)})@Py=9o">
+<field name="VAR" id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</field>
+</block>
+</value>
+</block>
+</value>
+<value name="WIDTH">
+<shadow type="math_number" id="NyN7h2KKuqpsY#J6s(%o">
+<field name="NUM">6</field>
+</shadow>
+</value>
+<value name="PRECISION">
+<shadow type="math_number" id="nwE;WS(ibZEP,~LyH[Pa">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+</value>
+<value name="ADD6">
+<block type="text" id="H{L/(@0ae0GVMzfxgubE">
+<field name="TEXT">  (inches)</field>
+</block>
+</value>
+</block>
+</value>
+<next>
+<block type="telemetry_update" id="(n!HQF-xYOU=sanO$I/u"/>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</statement>
+</block>
+<block type="procedures_defreturn" id="1pwthw`S]P6?Y.S:$]Mk" x="-376" y="1854">
+<mutation statements="false"/>
+<field name="NAME">getInternalZAxisAngle</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<value name="RETURN">
+<block type="yawPitchRollAngles_getPropertyWithAngleUnit_Number" id=";$YuB8s@oqd0xHr#$u]p">
+<field name="PROP">Yaw</field>
+<value name="YAW_PITCH_ROLL_ANGLES">
+<block type="imu_getProperty_YawPitchRollAngles" id="]H[yuAYD]p|Ro-Iio}E(">
+<field name="IDENTIFIER">IMUAsIMU</field>
+<field name="PROP">RobotYawPitchRollAngles</field>
+<data>{"IDENTIFIER":"IMU"}</data>
+</block>
+</value>
+<value name="ANGLE_UNIT">
+<shadow type="navigation_typedEnum_angleUnit" id="GjilUA_`Vmsv9eK1(plc">
+<field name="ANGLE_UNIT">DEGREES</field>
+</shadow>
+</value>
+</block>
+</value>
+</block>
+<block type="misc_null" id="^FZ4_%+T!%}m0KQa-}gX" x="1116" y="1859"/>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
