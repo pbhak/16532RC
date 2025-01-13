@@ -1,15 +1,15 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
 <variables>
 <variable id="}5R#]ed}GosKcvN#h{/q">ms</variable>
-<variable id="u6^_WAFfqdRoGqZ8O-WQ">angle</variable>
 <variable id=":]g$9u2=a-U.|:Vp7Z^i">distance</variable>
 <variable id="-7RugW+C`JV6N9!U%wOP">extendViperslide</variable>
+<variable id="u6^_WAFfqdRoGqZ8O-WQ">angle</variable>
 <variable id="fLuckj{#+;4eLRu|4]Kj">imuParameters</variable>
 <variable type="AprilTagProcessor.Builder" id="NYqOu)Ei(Q{C!f;y!a^O">aprilTagProcessorBuilder</variable>
 <variable id="A@F[wk_(?$r1HR:4@}4%">inch</variable>
 <variable id="?.?jAjDXaP~!^(jq/Ls_">aprilTagProcessor</variable>
-<variable id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</variable>
 <variable id="hpIKfLW~?f#t~MG@)F91">targetPos</variable>
+<variable id="l)/,LjA`jR!1Nc@Z:`l!">myAprilTagDetections</variable>
 <variable id="FP*#346=#Y3??}MO58w7">speed</variable>
 <variable type="VisionPortal.Builder" id="wx@xgbnS_]b0DQL.08Qg">visionPortalBuilder</variable>
 <variable id="vP~n9zf$lW%hYD/C.j_-">myAprilTagDetection</variable>
@@ -527,9 +527,6 @@ touching Start), and Loop code (runs repeatedly while the OpMode is active, name
 Stopped).</comment>
 <data>{"commentPositionLeft":-20,"commentPositionTop":-169}</data>
 <statement name="STACK">
-<block type="procedures_callnoreturn" id="|gI:6!+%e~v;X~1q7?fs">
-<mutation name="init"/>
-<next>
 <block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
 <next>
 <block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
@@ -537,6 +534,16 @@ Stopped).</comment>
 <block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
 </value>
 <statement name="DO0">
+<block type="procedures_callnoreturn" id="|gI:6!+%e~v;X~1q7?fs">
+<mutation name="init"/>
+<next>
+<block type="linearOpMode_sleep_Number" id="3es}d?MSdS2F%L2x0AT~">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="p^=P!}Of5Sdux=E]9tqH">
+<field name="NUM">500</field>
+</shadow>
+</value>
+<next>
 <block type="procedures_callnoreturn" id=".xzATT(4[5!1id2k,88!">
 <mutation name="goForward">
 <arg name="distance"/>
@@ -544,7 +551,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="r$7lC,V}Sc2xNHjyFvTd">
-<field name="NUM">4</field>
+<field name="NUM">6</field>
 </block>
 </value>
 <value name="ARG1">
@@ -570,7 +577,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="~1KTOMz6TyJnsi2~)aUf">
-<field name="NUM">24</field>
+<field name="NUM">28.5</field>
 </block>
 </value>
 <value name="ARG1">
@@ -585,7 +592,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="6OS;=Q4SjjQ=~AuAQ7xS">
-<field name="NUM">25</field>
+<field name="NUM">35</field>
 </block>
 </value>
 <next>
@@ -604,7 +611,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="42R0Iuy6/;pR0~ltJov6">
-<field name="NUM">4</field>
+<field name="NUM">3.35</field>
 </block>
 </value>
 <value name="ARG1">
@@ -620,7 +627,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="kKv@%39oy3x@bmEENnN:">
-<field name="NUM">2</field>
+<field name="NUM">2.3</field>
 </block>
 </value>
 <value name="ARG1">
@@ -638,7 +645,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="cso;%2BOf}~5$!N14pS}">
-<field name="NUM">800</field>
+<field name="NUM">750</field>
 </block>
 </value>
 <next>
@@ -675,7 +682,7 @@ Stopped).</comment>
 <data>{"IDENTIFIER":"Viperslide"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="zz}%bUxh!8m8Y%}q(TyI">
-<field name="NUM">0</field>
+<field name="NUM">0.05</field>
 </shadow>
 </value>
 <next>
@@ -693,7 +700,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="jS+,4$@a__ayZwaGa$E(">
-<field name="NUM">130</field>
+<field name="NUM">115</field>
 </block>
 </value>
 <next>
@@ -703,7 +710,7 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="^8W*dkm9ZV6THV7N.=Pv">
-<field name="NUM">1450</field>
+<field name="NUM">1100</field>
 </block>
 </value>
 <next>
@@ -711,7 +718,7 @@ Stopped).</comment>
 <field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
 <value name="VALUE">
 <block type="math_number" id="^8ZeZLISNEh0+F_u`o:-">
-<field name="NUM">0.43</field>
+<field name="NUM">0.4</field>
 </block>
 </value>
 <next>
@@ -722,12 +729,28 @@ Stopped).</comment>
 </mutation>
 <value name="ARG0">
 <block type="math_number" id="Bw_f9|Zq#E[{!FA[7KIM">
-<field name="NUM">17</field>
+<field name="NUM">24</field>
 </block>
 </value>
 <value name="ARG1">
 <block type="logic_boolean" id="*HOufvwxbzD/xmm0h=8K">
 <field name="BOOL">TRUE</field>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="BXv#L0dBBV#cpFc1+)nI">
+<mutation name="goForward">
+<arg name="distance"/>
+<arg name="extendViperslide"/>
+</mutation>
+<value name="ARG0">
+<block type="math_number" id="Cs_U^v0uj4b%WMGG#^-P">
+<field name="NUM">4</field>
+</block>
+</value>
+<value name="ARG1">
+<block type="logic_boolean" id="/89+SlOtr=Ci,uF.OpKf">
+<field name="BOOL">FALSE</field>
 </block>
 </value>
 <next>
@@ -740,6 +763,21 @@ Stopped).</comment>
 <field name="NUM">0.095</field>
 </shadow>
 </value>
+<next>
+<block type="linearOpMode_sleep_Number" id="_%(qz3]$/RKCpnM$Vs_0">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="cs=ttg45_cNA/#woS0l%">
+<field name="NUM">30000</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -778,8 +816,6 @@ Stopped).</comment>
 </next>
 </block>
 </statement>
-</block>
-</next>
 </block>
 </next>
 </block>
@@ -982,7 +1018,7 @@ Stopped).</comment>
 <data>{"IDENTIFIER":"Viperslide"}</data>
 <value name="VALUE">
 <shadow type="math_number" id="L6AUx4s4m)==8bUrLlQg">
-<field name="NUM">0</field>
+<field name="NUM">0.05</field>
 </shadow>
 </value>
 </block>
@@ -1546,6 +1582,133 @@ Stopped).</comment>
 </block>
 </statement>
 </block>
+<block type="procedures_defnoreturn" id="VD4TW8t:H/d!fVsOk:p}" x="1520" y="713">
+<mutation>
+<arg name="ms" varid="}5R#]ed}GosKcvN#h{/q"/>
+</mutation>
+<field name="NAME">moveForwardFor</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="dcMotor_setProperty_Number" id=",GQwo/XSDp-O_qPf/$Bt">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="6k^DlRElvC6XTbGt=V%J">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="*oqDu.xg;8s#7quud4B=">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="9GZcwun1~x{|@wQaUfq7">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="esSqS1w@(]c}WB[E8Al$">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="/rt[BQ]4pu[^hW(~R;bM">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="3i,Y-s5l4k#B3tnAYbn~">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="foDrKv:wWm{ms-z84HI9">
+<field name="VAR" id="FP*#346=#Y3??}MO58w7">speed</field>
+</block>
+</value>
+<next>
+<block type="linearOpMode_sleep_Number" id="ue~%V}5FfsUngJY5#6~H">
+<value name="MILLISECONDS">
+<shadow type="math_number">
+<field name="NUM">1000</field>
+</shadow>
+<block type="variables_get" id="fh^_0Q]dd9|Pzso#%+x-">
+<field name="VAR" id="}5R#]ed}GosKcvN#h{/q">ms</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="[6(4D;6hI1c-[{?jj`nc">
+<field name="IDENTIFIER">frontLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="J@%,Fq5}D,}HOD:FLbBj">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="crServo_setProperty_Number" id="W$iOj!eVAZdB!v|4Hp{Y">
+<field name="IDENTIFIER">frontRightAsCRServo</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"frontRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="zfuS2AU99)7d~,=Z01U*">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Nx@Io*8z/=?~=+F|E,_.">
+<field name="IDENTIFIER">backLeftAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backLeft"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="%$yAxnt!*]CZ/K`Led_D">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="dcMotor_setProperty_Number" id="Z+cAJGv#Y!5QVT~O;3*N">
+<field name="IDENTIFIER">backRightAsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"backRight"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="epfh$/!B(pN7KB4{U@_y">
+<field name="NUM">0</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
 <block type="procedures_defreturn" id="kT5YKYk0n#+TZ5-t,nR?" x="-222" y="1441">
 <mutation statements="false"/>
 <field name="NAME">getZAxisAngle</field>
@@ -2001,6 +2164,6 @@ Stopped).</comment>
 </xml>
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Extra>
-<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="" />
+<OpModeMeta flavor="AUTONOMOUS" group="" autoTransition="2024-25 TeleOp" />
 <Enabled value="true" />
 </Extra>
